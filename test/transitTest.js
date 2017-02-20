@@ -25,7 +25,7 @@ var invalidDepartureTimeReq = "json?origin=" + encodedOrigin + "&destination=" +
 var requestBicyclingMode = "json?origin=" + encodedOrigin + "&destination=" + encodedDestination + "&mode=" + constants.BICYCLING + "&arrival_time=" + arrival_time + "&key=" + apiKey;
 
 //Test Suite Transit
-describe('Testing Directions API - driving directions from Origin to Destination ', function() {
+describe('Testing Directions API - transit from Origin to Destination with different modes eg:bicycling ', function() {
 
     var validResponse = function(res) {
         res.body.should.have.property("geocoded_waypoints");
@@ -117,7 +117,7 @@ describe('Testing Directions API - driving directions from Origin to Destination
     });
 
     //Test Case 4
-    it('should return an error if invalid Departure Tiime is provided', function(done) {
+    it('should return an error if invalid Departure Time is provided', function(done) {
 
         server.get(invalidDepartureTimeReq)
             .expect(400)

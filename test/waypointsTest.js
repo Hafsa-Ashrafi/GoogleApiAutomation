@@ -29,7 +29,7 @@ var invalidWaypointRequest = "json?origin=" + encodedOrigin + "&destination=" + 
 var singleWaypointTransitModeReq = "json?origin=" + encodedOrigin + "&destination=" + encodedDestination + "&mode=transit" + "&waypoints=" + waypoint1 + "&key=" + apiKey;
 
 //Test Suite Waypoints
-describe('Testing Directions API - driving directions from Origin to Destination ', function() {
+describe('Testing Directions API - Routes from Origin to waypoint1, waypoint2,.....waypointN....., and finally Destination ', function() {
 
     var validResponse = function(res) {
         res.body.should.have.property("geocoded_waypoints");

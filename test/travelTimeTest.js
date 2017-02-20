@@ -20,7 +20,7 @@ var validJsonRequest = "json?origin=" + encodedOrigin + "&destination=" + encode
 var noDeptTimeWithTraficModel = "json?origin=" + encodedOrigin + "&destination=" + encodedDestination + "&traffic_model=" + traffic_model + "&key=" + apiKey;
 
 //Test Suite Travel time
-describe('Testing Directions API - driving directions from Origin to Destination ', function() {
+describe('Testing Directions API - Distance and time required from Origin to Destination ', function() {
 
     var validResponse = function(res) {
         res.body.should.have.property("geocoded_waypoints");
@@ -29,7 +29,7 @@ describe('Testing Directions API - driving directions from Origin to Destination
     };
 
     //Test Case 1
-    it('should return available waypoints and routes', function(done) {
+    it('should return available waypoints, routes, time and distace', function(done) {
 
         server.get(validJsonRequest)
             .expect(200)
@@ -51,8 +51,9 @@ describe('Testing Directions API - driving directions from Origin to Destination
                 assert.equal(startAddressResult, (constants.ORIGIN), 'the startAddress result in routes is equal to origin');
                 assert.equal(endAddressResult, (constants.DESTINATION), 'the endAddress result in routes is equal to destination');
 
-                var travelTimeResult = utils.directionUtils.getTotalTimeAndDistance(res.body);
 
+                //Check that routes contain the time and distance of the leg
+                var travelTimeResult = utils.directionUtils.getTotalTimeAndDistance(res.body);
                 assert.ok(travelTimeResult.time, 'the Travel Time is provided ' + travelTimeResult.time);
                 assert.ok(travelTimeResult.distance, 'the Distance is provided ' + travelTimeResult.distance);
                 done();
