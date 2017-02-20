@@ -1,0 +1,31 @@
+{
+  "name": "googleapiautomation",
+  "version": "1.0.0",
+  "description": "Simple Testing Project",
+  "main": "index.js",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "express": "^4.14.1",
+    "mocha": "^3.2.0",
+    "request": "^2.79.0",
+    "should": "^11.2.0"
+  },
+  "devDependencies": {
+    "js-beautify": "^1.6.9",
+    "superagent": "^3.4.4",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hafsa-Ashrafi/GoogleApiAutomation.git"
+  },
+  "author": "Hafsa Ashrafi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hafsa-Ashrafi/GoogleApiAutomation/issues"
+  },
+  "homepage": "https://github.com/Hafsa-Ashrafi/GoogleApiAutomation#readme"
+}
